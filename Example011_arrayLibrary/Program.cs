@@ -22,7 +22,27 @@ void printArray (int[] col)
     }
     Console.WriteLine (")");
 }
-
+int indexOf (int[] collection, int find)
+{
+    int length=collection.Length;
+    int index=0;
+    int position=-1;
+    while (index<length)
+    {
+        if (collection[index]==find)
+        {
+            position=index;
+            break;
+            
+        }
+        index++;
+    }
+    return position;
+}
 int[] array = new int [10];
 fillArray(array);
 printArray (array);
+
+int whatFind=4;
+int findedIndex=indexOf (array,whatFind);
+if (findedIndex!=-1) Console.WriteLine ($"Элемент {whatFind} в массиве есть под индексом {findedIndex}");
